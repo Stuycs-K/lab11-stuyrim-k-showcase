@@ -162,12 +162,12 @@ public class Game{
       if(partyTurn){
 
         //Process user input for the last Adventurer:
-        if(input.equals("attack") || input.equals("a")){
+        if(input.startsWith("attack ") || input.startsWith("a ")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
-        else if(input.equals("special") || input.equals("sp")){
+        else if(input.startsWith("special ") || input.startsWith("sp ")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -239,4 +239,24 @@ public class Game{
     //After quit reset things:
     quit();
   }
+
+
+  /******************EXTRA EXTRA*********************/
+  public static String itoa(int i){
+		String digits ="🯰 	🯱 	🯲 	🯳 	🯴 	🯵 	🯶 	🯷 	🯸 	🯹";
+		String ans = "";
+		if(i == 0)return digits.substring(0,2);
+		while(i > 0){
+			ans = digits.substring(i%10*2,i%10*2+2)+ans;
+			i/=10;
+		}
+		return ans;
+	}
+
+
+
+
+
+
+  /******************EXTRA EXTRA*********************/
 }
